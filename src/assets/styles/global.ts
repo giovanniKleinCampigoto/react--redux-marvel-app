@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 
   body {
-    maring: 0;
+    margin: 0;
     box-sizing: border-box;
     background: #292929;
   }
