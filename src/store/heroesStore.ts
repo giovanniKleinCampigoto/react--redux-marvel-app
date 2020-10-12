@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, Reducer } from 'redux';
 
 interface HeroesPayload {
   name: string;
@@ -10,23 +10,39 @@ interface HeroesPayload {
   };
 }
 
+interface StoreState {
+  heroes: HeroesPayload[] | [];
+}
+
 interface HeroesStoreActions {
-  type: 'SAVE';
+  type: 'SAVE_HEROES' | 'SEARCH_HEROES';
   payload: {
     heroes: HeroesPayload[];
   };
 }
 
-const heroesReducer = (
-  state: HeroesPayload[],
+const initialStoreState: StoreState = {
+  heroes: [],
+};
+
+const heroesReducer: Reducer<any, HeroesStoreActions> = (
+  state = initialStoreState,
   action: HeroesStoreActions,
-): HeroesPayload[] => {
+) => {
   switch (action.type) {
-    case 'SAVE':
-      return [...state, ...action.payload.heroes];
+    case 'SAVE_HEROES':
+      return {
+        heroes: [...state.heroes, ...action.payload.heroes],
+      };
+    case 'SEARCH_HEROES':
+      return {
+        heroes: action.payload.heroes,
+      };
     default:
       return state;
   }
 };
 
 const heroesStore = createStore(heroesReducer);
+
+export default heroesStore;
