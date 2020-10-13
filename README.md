@@ -1,6 +1,6 @@
 # Marvel Super Heroes
 
-## How to start the project
+### How to start the project
 
 1. First install all the project dependencies with using the command yarn or npm install
 
