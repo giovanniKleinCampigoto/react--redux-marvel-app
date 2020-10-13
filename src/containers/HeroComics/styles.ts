@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const ComicsList = styled.ul`
   display: flex;
@@ -12,7 +13,7 @@ export const ComicThumbnail = styled.img``;
 
 export const ComicTitle = styled.p``;
 
-export const ComicsListItem = styled.li`
+export const ComicsListItem = styled(motion.li)`
   padding: 8px 0;
   margin: 0 16px;
   color: white;

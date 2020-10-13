@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   margin: 0 auto;
   max-width: 1056px;
+  margin-bottom: 80px;
 `;
 
 export const HeroesContainer = styled.div`
@@ -18,4 +19,9 @@ export const HeroesContainer = styled.div`
 export const SectionTitle = styled.h1`
   color: white;
   font-size: 34px;
+`;
+
+export const NoResults = styled.p`
+  color: #fff;
+  font-size: 36px;
 `;

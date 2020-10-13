@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import heroesStore from '../store/heroesStore';
 
 interface HeroComics {
@@ -24,7 +24,6 @@ export const useHeroes: any = () => {
   const [heroesState, setHeroesState] = useState<HeroProps[]>([]);
 
   if (heroesState.length) {
-    console.log(heroesState);
     return [heroesState, setHeroesState];
   }
 

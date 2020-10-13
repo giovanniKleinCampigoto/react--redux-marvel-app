@@ -24,6 +24,12 @@ const Detail: React.FC = () => {
   const id = Number(history.location.pathname.replace('/detail/', ''));
   const hero = useFindHeroById(id);
 
+  useEffect(() => {
+    if (!hero) {
+      history.push('/');
+    }
+  }, [hero, history]);
+
   const [favorite, setFavorite] = useState(() => {
     const { favorites } = favoriteStore.getState();
 
@@ -53,6 +59,10 @@ const Detail: React.FC = () => {
     setFavorite(false);
   }, [hero, favorite]);
 
+  if (!hero) {
+    return null;
+  }
+
   return (
     <Container>
       <MainContent>
@@ -66,7 +76,11 @@ const Detail: React.FC = () => {
           </HeroDescription>
 
           <ButtonContainer favorite={favorite}>
-            <a href={hero.urls[0].url} target="_blank" rel="noreferrer">
+            <a
+              href={hero.urls[0].url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               More details
             </a>
             <button onClick={saveFavorite} type="button">

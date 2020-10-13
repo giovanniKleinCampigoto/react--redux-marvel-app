@@ -18,4 +18,6 @@ export const colors = {
   secondary: '#292929',
   marvel: '#e62429',
   oxfordBlue: '#080a25',
+  skeletonPrimary: 'rgba(64,64,64, 0.5)',
+  skeletonSecondary: 'rgba(41,41,41,0.5)',
 };

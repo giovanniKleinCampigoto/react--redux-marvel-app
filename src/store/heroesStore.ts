@@ -15,7 +15,7 @@ interface StoreState {
 }
 
 interface HeroesStoreActions {
-  type: 'SAVE_HEROES' | 'SEARCH_HEROES';
+  type: 'SAVE_HEROES' | 'SEARCH_HEROES' | 'RESET_STORE';
   payload: {
     heroes: HeroesPayload[];
   };
@@ -30,6 +30,10 @@ const heroesReducer: Reducer<any, HeroesStoreActions> = (
   action: HeroesStoreActions,
 ) => {
   switch (action.type) {
+    case 'RESET_STORE':
+      return {
+        heroes: [],
+      };
     case 'SAVE_HEROES':
       return {
         heroes: [...state.heroes, ...action.payload.heroes],

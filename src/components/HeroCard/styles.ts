@@ -1,13 +1,14 @@
 import { MouseEventHandler } from 'react';
 
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { colors } from '../../assets/styles/global';
 
 interface ContainerProps {
   onClick: MouseEventHandler<HTMLDivElement>;
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled(motion.div)<ContainerProps>`
   margin: 16px 8px;
   padding: 16px;
   max-width: 216px;

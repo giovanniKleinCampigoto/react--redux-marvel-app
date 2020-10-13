@@ -68,6 +68,7 @@ export const ButtonContainer = styled.div<ButtonProps>`
     cursor: pointer;
     font-size: 18px;
     outline: 0;
+    transition: all 300ms;
 
     ${props =>
       props.favorite &&
